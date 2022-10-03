@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     </Head>
     <main>
       <Image
-        src={"/pictures/women_banner.webp"}
+        src={"/pictures/womens/banner/women_banner.webp"}
         alt=""
         width={20}
         height={10}
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       />
       <p className={styles.sale}>FIRST PURCHASE OFFER: TAKE 30% OFF SHOPWIDE. CODE APPLIED AT CHECKOUT*</p>
       <Image
-        src={"/pictures/women_banner1.webp"}
+        src={"/pictures/womens/banner/women_banner1.webp"}
         alt=""
         width={20}
         height={10}

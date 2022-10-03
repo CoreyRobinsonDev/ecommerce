@@ -4,6 +4,8 @@
       0 100% /var(--d, 0) 1px 
     no-repeat;
   transition:0.3s;
+  padding-bottom: .2rem;
+  width: fit-content;
 }
 .hover:hover {
   --d: 100%;

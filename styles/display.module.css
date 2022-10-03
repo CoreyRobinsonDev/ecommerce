@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.link_container {
+  flex: 0 1 30vw;
+  display: flex;
+  justify-content: center;
+  height: 90rem;
+}
+
+.link__caption_container {
+  text-align: center;
+  align-self: flex-end;
+  margin-bottom: 11rem;
+}
+
+.link__caption_container p {
+  color: white;
+  font-size: 2rem;
+}
+
+.link__caption_container h2 {
+  color: cyan;
+  font-size: 6rem;
+  font-weight: normal;
+  padding: 5rem;
+}
+
+.link__caption_container a {
+  color: black;
+  background-color: white;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  transition: 150ms ease-in;
+}
+
+.link__caption_container a:hover {
+  background-color: pink;
+}

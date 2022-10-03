@@ -1,19 +1,39 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BsHeart } from "react-icons/bs";
 
-const ItemCard = ({category = "womens", item = "clothes", index = 1}) => {
-  return <article>
-    <Link href="#"><Image src={`/pictures/${category}/${item}/fit${index}.webp`} alt={`${category} ${item}`} width={10} height={20} layout="responsive" /></Link>
-    <div>
-      <button>ADD TO CART</button>
-      <button><BsHeart/>Add to wishlist</button>
-    </div>
-    <div>
-      <h4>LOREM</h4>
-      <p>Lamcorper Ostique Amattis Drosele</p>
-      <p>$99.00</p>
-      <button></button>
+import styles from "../styles/itemCard.module.css";
+import FX from "../styles/FX.module.css";
+
+const ItemCard = ({category = "womens", item = "clothes", index = 1, hasSale = false}) => {
+  return <article className={styles.container}>
+    
+    <Link href="#">
+      <a className={styles.img} style={{
+        backgroundImage: "url(" + `/pictures/${category}/${item}/fit${index}.webp` + ")",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+       backgroundSize: "cover"
+      }}>
+        {hasSale && <p className={styles.sale}>SALE</p>}
+        <div className={styles.btn_container}>
+          <button className={styles.cart_btn}>ADD TO CART</button>
+          <button className={styles.wishlist_btn}><BsHeart/>Add to wishlist</button>
+        </div>
+      </a>
+    </Link>
+    
+    <div className={styles.info_container}>
+      <h5 className={FX.hover}>LOREM</h5>
+      <p className={`${styles.info__description} ${FX.hover}`}>Lamcorper Ostique Amattis Drosele</p>
+      {hasSale
+        ? <span>
+          <span className={styles.strikethrough}>$99.00</span>
+          <span className={styles.info__sale_price}>$79.00</span>
+        </span> 
+        : <p className={styles.info__price}>$99.00</p>
+      }
+      
+      <button className={styles.info__color}></button>
     </div>
   </article>
 }

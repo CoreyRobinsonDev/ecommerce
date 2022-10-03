@@ -10,7 +10,7 @@ const Footer = () => {
       <h3 className={styles.newsletter__title}>SIGN UP FOR NEWSLETTER</h3>
       <form className={styles.newsletter__form}>
         <div className={styles.form__input_container}>
-          <input className={styles.form__input} type="text" placeholder="don't miss this offer" required />
+          <input className={styles.form__input} type="text" placeholder="Don't miss this offer!" required />
           <button className={styles.form__submit} type="submit">SIGN UP</button>
         </div>
           <input  type="checkbox" required />
