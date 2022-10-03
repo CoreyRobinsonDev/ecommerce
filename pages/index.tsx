@@ -3,8 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Display from '../components/Display'
 import styles from '../styles/home.module.css'
+import { useAppSelector } from '../util/hooks'
 
 const Home: NextPage = () => {
+
   return <>
     <Head>
       <title>Artisan | Women&#39;s Clothing</title>
@@ -25,7 +27,7 @@ const Home: NextPage = () => {
         height={10}
         layout="responsive"
       />
-      <Display />
+      <Display  />
     </main>
   </>
 }

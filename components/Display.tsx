@@ -2,8 +2,10 @@ import Link from "next/link";
 import ItemCard from "./ItemCard";
 
 import styles from "../styles/display.module.css";
+import { Category } from "../util/types";
 
-const Display = ({category = "womens"}) => {
+const Display = ({ category = Category.womens}: { category?: Category}) => {
+
   return <section className={styles.container} >
     <Link href="#">
       <a className={styles.link_container} style={{

@@ -3,8 +3,13 @@ import { BsHeart } from "react-icons/bs";
 
 import styles from "../styles/itemCard.module.css";
 import FX from "../styles/FX.module.css";
+import { useAppSelector } from "../util/hooks";
+import { Category } from "../util/types";
 
-const ItemCard = ({category = "womens", item = "clothes", index = 1, hasSale = false}) => {
+const ItemCard = ({ category = Category.womens, index = 1, hasSale = false }: {category?: Category, index?: number, hasSale?: boolean }) => {
+  const inventory = useAppSelector(state => state.inventory);
+  const item = inventory[category]
+  
   return <article className={styles.container}>
     
     <Link href="#">
