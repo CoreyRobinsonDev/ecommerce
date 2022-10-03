@@ -1,0 +1,106 @@
+.nav__top_container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  height: 5.9rem;
+  background-color: black;
+}
+
+.top__style_list {
+  display: flex;
+}
+
+.top__item {
+  padding: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.top__item.--women {
+  color: black;
+  background-color: white;
+}
+
+.top__item.--men {
+  color: white;
+  background-color: dodgerblue;
+}
+.top__item.--kids {
+  color: white;
+  background-color: orange;
+}
+
+.top__carts {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+  margin-right: 5rem;
+  font-size: 2rem;
+}
+
+.favorites_container, .cart_container {
+  position: relative;
+}
+
+.favorites_num, .cart_num {
+  position: absolute;
+  text-align: center;
+  top: -.5em;
+  left: .7em;
+  font-size: 1.6rem;
+  background-color: black;
+  border-radius: 50%;
+  padding: 0 .3rem;
+}
+
+.sale {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.sale span {
+  text-decoration: underline;
+}
+
+.nav__bottom_container[data-style="men"] {
+  --color: white;
+  background-color: dodgerblue;
+}
+.nav__bottom_container[data-style="women"] {
+  --color: black;
+  background-color: white;
+}
+.nav__bottom_container[data-style="kids"] {
+  --color: white;
+  background-color: orange;
+}
+
+.nav__bottom_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 3rem;
+  color: var(--color);
+}
+
+.bottom__nav_list {
+  display: flex;
+  gap: 3rem;
+}
+
+.bottom__item {
+  color: var(--color);
+  font-weight: bold;
+}
+
+.bottom__item.--sale {
+  color: pink;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}

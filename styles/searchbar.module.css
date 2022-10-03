@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-right: none;
+  background-color: white;
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 1rem;
+}
+
+.submit {
+  font-size: 2rem;
+  color: white;
+  background-color: black;
+  padding: 1rem;
+}
