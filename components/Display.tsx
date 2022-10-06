@@ -21,15 +21,10 @@ const Display = ({ category = Category.womens}: { category?: Category}) => {
         </div>
       </a>
     </Link>
-  
-    <ItemCard/>
-    <ItemCard index={2} hasSale={true} />
-    <ItemCard index={3} />
-    <ItemCard index={4} />
-    <ItemCard/>
-    <ItemCard index={3} hasSale={true} />
+    <ItemCard index={0} />
+    <ItemCard index={1} hasSale={true} />
     <ItemCard index={2} />
-    <ItemCard index={5} hasSale={true} />
+    <ItemCard index={3} />
     <Link href="#">
       <a className={styles.link_container} style={{
         backgroundImage: "url(" + `/pictures/${category}/links/summer.jpg` + ")",

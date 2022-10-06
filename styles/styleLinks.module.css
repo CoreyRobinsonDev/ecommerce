@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.link {
+  --gray: 0%;
+  --scale: 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  flex: 1 1 40rem;
+  height: 40rem;
+}
+
+.link:hover {
+  --gray: 60%;
+  --scale: 1.2;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  transform: scale(var(--scale));
+  filter: grayscale(var(--gray));
+  transition: var(--transition);
+}
+
+.link_btn {
+  position: absolute;
+  top: 30rem;
+  z-index: 5;
+  background-color: white;
+  color: black;
+  box-shadow: 1px 3px 2px #eee;
+  padding: 1rem 2rem;
+  transition: var(--transition);
+}
+
+.link_btn:hover {
+  background-color: pink;
+  box-shadow: 1px 3px 2px pink;
+}

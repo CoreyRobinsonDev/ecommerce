@@ -1,44 +1,52 @@
 import Link from "next/link";
 import { BsHeart } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 import styles from "../styles/itemCard.module.css";
 import FX from "../styles/FX.module.css";
 import { useAppSelector } from "../util/hooks";
 import { Category } from "../util/types";
 
-const ItemCard = ({ category = Category.womens, index = 1, hasSale = false }: {category?: Category, index?: number, hasSale?: boolean }) => {
+const ItemCard = ({ category = Category.womens, index = 0, hasSale = false }: {category?: Category, index?: number, hasSale?: boolean }) => {
   const inventory = useAppSelector(state => state.inventory);
-  const item = inventory[category]
-  
+  const item: any = inventory[category];
+  const clothing = item.clothes[index];
+  const [img, setImg] = useState(clothing.img1);
+
   return <article className={styles.container}>
     
     <Link href="#">
-      <a className={styles.img} style={{
-        backgroundImage: "url(" + `/pictures/${category}/${item}/fit${index}.webp` + ")",
+      <motion.a className={styles.img} style={{
+        backgroundImage: `url(${img})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-       backgroundSize: "cover"
-      }}>
+        backgroundSize: "cover"
+      }}
+        onHoverStart={() => setImg(clothing.img2)}
+        onHoverEnd={() => setImg(clothing.img1)}
+      >
         {hasSale && <p className={styles.sale}>SALE</p>}
         <div className={styles.btn_container}>
           <button className={styles.cart_btn}>ADD TO CART</button>
           <button className={styles.wishlist_btn}><BsHeart/>Add to wishlist</button>
         </div>
-      </a>
+      </motion.a>
     </Link>
     
     <div className={styles.info_container}>
-      <h5 className={FX.hover}>LOREM</h5>
-      <p className={`${styles.info__description} ${FX.hover}`}>Lamcorper Ostique Amattis Drosele</p>
+      <h5 className={FX.hover}>{clothing.brand}</h5>
+      <p className={`${styles.info__description} ${FX.hover}`}>{clothing.name}</p>
       {hasSale
         ? <span>
-          <span className={styles.strikethrough}>$99.00</span>
-          <span className={styles.info__sale_price}>$79.00</span>
+          <span className={styles.strikethrough}>${clothing.price}.00</span>
+          <span className={styles.info__sale_price}>${Math.floor(clothing.price - (clothing.price * .2))}.00</span>
         </span> 
-        : <p className={styles.info__price}>$99.00</p>
+        : <p className={styles.info__price}>${clothing.price}.00</p>
       }
-      
-      <button className={styles.info__color}></button>
+      <div>
+        {clothing.colors.map((color:string, key:number) => <button key={key} className={styles.info__color} style={{backgroundColor: color}}></button>)}
+      </div>
     </div>
   </article>
 }
