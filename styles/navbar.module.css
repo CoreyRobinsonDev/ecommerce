@@ -104,3 +104,23 @@
   color: pink;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 920px) {    
+  .hamburger {
+    display: block;
+  }
+
+  .bottom__nav_list, .sale {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .brand {
+    display: none;
+  }
+}

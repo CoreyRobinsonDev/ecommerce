@@ -7,7 +7,7 @@
 }
 
 .link_container {
-  flex: 0 1 45vw;
+  flex: 0 1 49vw;
   display: flex;
   justify-content: center;
   height: 90rem;
@@ -28,7 +28,7 @@
   color: cyan;
   font-size: 6rem;
   font-weight: normal;
-  padding: 5rem;
+  padding: 5rem 0;
 }
 
 .link__caption_container a {
@@ -41,4 +41,10 @@
 
 .link__caption_container a:hover {
   background-color: pink;
+}
+
+@media only screen and (max-width: 920px) {    
+  .link_container {
+    flex: 0 1 100vw;
+  }
 }

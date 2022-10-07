@@ -16,7 +16,7 @@ const Display = ({ category = Category.womens}: { category?: Category}) => {
       }}>
         <div className={styles.link__caption_container}>
           <p>New Collection</p>
-          <h2>COLLEGEWEAR</h2>
+          <h2>COLLEGE<wbr/>WEAR</h2>
           <Link href="#">SHOP NOW</Link>
         </div>
       </a>

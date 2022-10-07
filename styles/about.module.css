@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 112ch;
+  margin: 8rem auto;
+}
+
+.header {
+  font-size: 3rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: goldenrod;
+}
+
+.container p {
+  text-align: center;
+}
