@@ -31,7 +31,7 @@ const Navbar = () => {
         <li><Link href="#"><a className={styles.bottom__item}>NEW IN</a></Link></li>
         <li><Link href="#"><a className={styles.bottom__item}>TREND</a></Link></li>
         <li><Link href="#"><a className={styles.bottom__item}>COLLECTIONS</a></Link></li>
-        <li><Link href="#"><a className={styles.bottom__item}>ABOUT US</a></Link></li>
+        <li><Link href="/about-us"><a className={styles.bottom__item}>ABOUT US</a></Link></li>
         <li><Link href="#"><a className={styles.bottom__item}>CONTACT</a></Link></li>
         <li><Link href="#"><a className={styles.bottom__item}>FAQ</a></Link></li>
         <li><Link href="#"><a className={`${styles.bottom__item} ${styles["--sale"]}`}>SALE</a></Link></li>

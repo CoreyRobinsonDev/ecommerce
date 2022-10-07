@@ -43,7 +43,7 @@ const Footer = () => {
       <div className={styles.links_child}>
         <h3>INFORMATION</h3>
         <ul className={styles.links_list}>
-          <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>About Us</a></Link></li>
+          <li><Link href="/about-us"><a className={`${styles.links_list__item} ${FX.hover}`}>About Us</a></Link></li>
           <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>Customer Service</a></Link></li>
           <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>New Collection</a></Link></li>
           <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>Best Sellers</a></Link></li>
