@@ -9,10 +9,12 @@ import SearchBar from "./SearchBar";
 import styles from "../styles/navbar.module.css";
 import FX from "../styles/FX.module.css";
 import CollectionsMenu from "./CollectionsMenu";
+import NewInMenu from "./NewInMenu";
 
 const Navbar = () => {
   const [focus, setFocus] = useState("");
   const [collectionsActive, setCollectionsActive] = useState(false);
+  const [newInActive, setNewInActive] = useState(false);
 
   return <nav className={styles.container}>
     <div className={styles.nav__top_container}>
@@ -22,7 +24,7 @@ const Navbar = () => {
         <li><Link href="#"><a className={`${styles["--kids"]} ${styles.top__item}`} onClick={() => setFocus("kids")}>KIDS</a></Link></li>
       </ul> 
       <span className={styles.top__carts}>
-        <p className={styles.sale}><span>EXTRA 10% OFF</span> ON FIRST ORDER</p>
+        <div className={styles.sale}><span>EXTRA 10% OFF</span> ON FIRST ORDER</div>
         <button><BsPerson /></button>
         <button className={styles.favorites_container}><BsHeart /><span className={styles.favorites_num}>0</span></button>
         <button className={styles.cart_container}><BsBag /><span className={styles.cart_num}>0</span></button>
@@ -32,7 +34,10 @@ const Navbar = () => {
     <div className={styles.nav__bottom_container} data-style={focus}>
       <Link href="/"><a className={styles.brand}>ARTISAN</a></Link>
       <ul className={styles.bottom__nav_list}>
-        <li><Link href="#"><a className={`${styles.bottom__item} ${FX.hover}`}>NEW IN</a></Link></li>
+        <motion.li
+          onHoverStart={() => setNewInActive(true)}
+          onHoverEnd={() => setTimeout(() => setNewInActive(false), 300)}
+        ><Link href="#"><a className={`${styles.bottom__item} ${FX.hover}`}>NEW IN</a></Link></motion.li>
         <li><Link href="#"><a className={`${styles.bottom__item} ${FX.hover}`}>TREND</a></Link></li>
         <motion.li
           onHoverStart={() => setCollectionsActive(true)}
@@ -41,13 +46,13 @@ const Navbar = () => {
         <li><Link href="/about-us"><a className={`${styles.bottom__item} ${FX.hover}`}>ABOUT US</a></Link></li>
         <li><Link href="#"><a className={`${styles.bottom__item} ${FX.hover}`}>CONTACT</a></Link></li>
         <li><Link href="#"><a className={`${styles.bottom__item} ${FX.hover}`}>FAQ</a></Link></li>
-        <li><Link href="#"><a className={`${styles.bottom__item} ${FX.hover} ${styles["--sale"]}`}>SALE</a></Link></li>
       </ul>
       <SearchBar />
       <span className={styles.hamburger}>
         <GiHamburgerMenu size={30} />
       </span>
       <CollectionsMenu isActive={collectionsActive} />
+      <NewInMenu isActive={newInActive} />
     </div>
   </nav>
 }

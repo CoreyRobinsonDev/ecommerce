@@ -7,7 +7,6 @@ import Display from '../components/Display'
 import Sale from '../components/Sale'
 import StyleLinks from '../components/StyleLinks'
 import styles from '../styles/home.module.css'
-import { useAppSelector } from '../util/hooks'
 
 const Home: NextPage = () => {
 

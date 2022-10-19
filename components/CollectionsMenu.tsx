@@ -20,6 +20,7 @@ const CollectionsMenu = ({ isActive }: { isActive: boolean }) => {
       onHoverEnd={() => { setIsHover(false); }}
     >
       <Image
+        className={styles.img}
         src="/pictures/menu.jpg"
         alt=""
         width={280}
@@ -35,6 +36,7 @@ const CollectionsMenu = ({ isActive }: { isActive: boolean }) => {
         <li className={styles.list_item}><Link href="#"><a className={`${styles.list_item__content} ${FX.hover}`}>Metropolis</a></Link></li>
       </ul>
       <Image
+        className={styles.img}
         src="/pictures/menu2.webp"
         alt=""
         width={280}
