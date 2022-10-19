@@ -1,3 +1,7 @@
+.container {
+  box-shadow: 0 0 5px 0 #eee;
+}
+
 .nav__top_container {
   display: flex;
   justify-content: space-between;

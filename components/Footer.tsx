@@ -27,7 +27,7 @@ const Footer = () => {
         <li><Link href="https://www.pinterest.com/" target="_blank" rel="noreferrer"><a className={`${styles.socials_list__item} ${styles["--pinterest"]}`}><FaPinterestP/></a></Link></li>
         <li><Link href="https://www.youtube.com/" target="_blank" rel="noreferrer"><a className={`${styles.socials_list__item} ${styles["--youtube"]}`}><BsYoutube /></a></Link></li>
       </ul>
-      <small className={styles.copyright}>&#169; 2022 Artisan, Inc. All rights reserved.</small>
+      <small className={styles.copyright}>&#169; 2022 Artisan, Inc. All rights reserved. This is a non-functional front-end theme showcase. <Link href="https://github.com/CoreyRobinsonDev/ecommerce" target="_blank" rel="nonreferrer">{"<View Code>"}</Link></small>
     </div>
     <div className={styles.links_container}>
       <div className={styles.links_child}>
@@ -58,7 +58,7 @@ const Footer = () => {
           <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>Search Term</a></Link></li>
           <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>Advanced Search</a></Link></li>
           <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>Orders & Returns</a></Link></li>
-          <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>Contact Us</a></Link></li>
+          <li><Link href="/contact"><a className={`${styles.links_list__item} ${FX.hover}`}>Contact Us</a></Link></li>
           <li><Link href="#"><a className={`${styles.links_list__item} ${FX.hover}`}>Store Locations</a></Link></li>
         </ul>
       </div>
