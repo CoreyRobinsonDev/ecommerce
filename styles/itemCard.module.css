@@ -26,6 +26,7 @@
   opacity: var(--opacity);
   background-color: white;
   width: 100%;
+  margin-top: -10rem;
   
   transition: 300ms ease;
 }
@@ -107,4 +108,11 @@
   text-decoration: line-through;
   opacity: 50%;
   margin-right: 2rem;
+}
+
+
+@media only screen and (max-width: 920px) {    
+  .btn_container {
+    opacity: 100;
+  }
 }

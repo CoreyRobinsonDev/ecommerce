@@ -10,11 +10,14 @@ import styles from "../styles/navbar.module.css";
 import FX from "../styles/FX.module.css";
 import CollectionsMenu from "./CollectionsMenu";
 import NewInMenu from "./NewInMenu";
+import { useAppSelector } from "../util/hooks";
 
 const Navbar = () => {
   const [focus, setFocus] = useState("");
   const [collectionsActive, setCollectionsActive] = useState(false);
   const [newInActive, setNewInActive] = useState(false);
+  const cartItems = useAppSelector(state => state.user.cart).length;
+  const wishlistItems = useAppSelector(state => state.user.wishlist).length;
 
   return <nav className={styles.container}>
     <div className={styles.nav__top_container}>
@@ -26,9 +29,9 @@ const Navbar = () => {
       <span className={styles.top__carts}>
         <div className={styles.sale}><span>EXTRA 10% OFF</span> ON FIRST ORDER</div>
         <button><BsPerson /></button>
-        <button className={styles.favorites_container}><BsHeart /><span className={styles.favorites_num}>0</span></button>
-        <button className={styles.cart_container}><BsBag /><span className={styles.cart_num}>0</span></button>
         <button><RiHeadphoneLine/></button>
+        <button className={styles.favorites_container}><BsHeart /><span className={styles.favorites_num}>{wishlistItems}</span></button>
+        <button className={styles.cart_container}><BsBag /><span className={styles.cart_num}>{cartItems}</span></button>
       </span>
     </div>
     <div className={styles.nav__bottom_container} data-style={focus}>

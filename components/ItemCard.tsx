@@ -5,17 +5,23 @@ import { useState } from "react";
 
 import styles from "../styles/itemCard.module.css";
 import FX from "../styles/FX.module.css";
-import { useAppSelector } from "../util/hooks";
+import { useAppSelector, useAppDispatch } from "../util/hooks";
 import { Category } from "../util/types";
+import { addToCart, addToWishlist } from "../lib/features/userSlice";
 
 const ItemCard = ({ category = Category.womens, index = 0, hasSale = false }: {category?: Category, index?: number, hasSale?: boolean }) => {
   const inventory = useAppSelector(state => state.inventory);
   const item: any = inventory[category];
   const clothing = item.clothes[index];
   const [img, setImg] = useState(clothing.img1);
+  const dispatch = useAppDispatch();
+
+  const insertToCart = () => dispatch(addToCart(clothing));
+  const insertToWishlist = () => dispatch(addToWishlist(clothing));
 
   return <article className={styles.container}>
-    
+    <div>
+
     <Link href="#">
       <motion.a className={styles.img} style={{
         backgroundImage: `url(${img})`,
@@ -25,14 +31,15 @@ const ItemCard = ({ category = Category.womens, index = 0, hasSale = false }: {c
       }}
         onHoverStart={() => setImg(clothing.img2)}
         onHoverEnd={() => setImg(clothing.img1)}
-      >
+        >
         {hasSale && <p className={styles.sale}>SALE</p>}
-        <div className={styles.btn_container}>
-          <button className={styles.cart_btn}>ADD TO CART</button>
-          <button className={styles.wishlist_btn}><BsHeart/>Add to wishlist</button>
-        </div>
       </motion.a>
     </Link>
+        <div className={styles.btn_container}>
+          <button className={styles.cart_btn} onClick={insertToCart}>ADD TO CART</button>
+          <button className={styles.wishlist_btn} onClick={insertToWishlist}><BsHeart/>Add to wishlist</button>
+        </div>
+        </div>
     
     <div className={styles.info_container}>
       <h5 className={FX.hover}>{clothing.brand}</h5>

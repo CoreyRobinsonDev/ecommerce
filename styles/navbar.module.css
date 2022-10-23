@@ -43,6 +43,10 @@
   margin-right: 2rem;
 }
 
+.sale {
+  font-size: 1.5rem;
+}
+
 .favorites_container, .cart_container {
   position: relative;
 }
@@ -94,11 +98,6 @@
 .bottom__item {
   color: var(--color);
   font-weight: bold;
-}
-
-.bottom__item.--sale {
-  color: pink;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .hamburger {
