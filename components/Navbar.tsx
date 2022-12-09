@@ -10,16 +10,21 @@ import styles from "../styles/navbar.module.css";
 import FX from "../styles/FX.module.css";
 import CollectionsMenu from "./CollectionsMenu";
 import NewInMenu from "./NewInMenu";
-import { useAppSelector } from "../util/hooks";
+import ItemPopout from "./ItemPopout";
+  import { useAppSelector, useAppDispatch } from "../util/hooks";
+import { toggleVisibility } from "../lib/features/userSlice";
 
 const Navbar = () => {
   const [focus, setFocus] = useState("");
   const [collectionsActive, setCollectionsActive] = useState(false);
   const [newInActive, setNewInActive] = useState(false);
-  const cartItems = useAppSelector(state => state.user.cart).length;
-  const wishlistItems = useAppSelector(state => state.user.wishlist).length;
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector(state => state.user.cart).reduce((acc, cur) => acc + cur.count, 0);
+  const wishlistItems = useAppSelector(state => state.user.wishlist).reduce((acc, cur) => acc + cur.count, 0);
+  console.log(cartItems)
 
   return <nav className={styles.container}>
+    <ItemPopout />
     <div className={styles.nav__top_container}>
       <ul className={styles.top__style_list}>
         <li><Link href="/"><a className={`${styles["--women"]} ${styles.top__item}`} onClick={() => setFocus("women")}>WOMEN</a></Link></li>
@@ -30,8 +35,8 @@ const Navbar = () => {
         <div className={styles.sale}><span>EXTRA 10% OFF</span> ON FIRST ORDER</div>
         <button><BsPerson /></button>
         <button><RiHeadphoneLine/></button>
-        <button className={styles.favorites_container}><BsHeart /><span className={styles.favorites_num}>{wishlistItems}</span></button>
-        <button className={styles.cart_container}><BsBag /><span className={styles.cart_num}>{cartItems}</span></button>
+        <button className={styles.favorites_container} onClick={() => dispatch(toggleVisibility())}><BsHeart /><span className={styles.favorites_num}>{wishlistItems}</span></button>
+        <button className={styles.cart_container} onClick={() => dispatch(toggleVisibility())}><BsBag /><span className={styles.cart_num}>{cartItems}</span></button>
       </span>
     </div>
     <div className={styles.nav__bottom_container} data-style={focus}>

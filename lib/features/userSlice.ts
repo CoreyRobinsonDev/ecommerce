@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 type State = {
   cart: any[],
-  wishlist: any[]
+  wishlist: any[],
+  isCartVisible: boolean
 }
 
 let initialState: State;
@@ -11,11 +12,13 @@ if (typeof window !== "undefined") {
   initialState = {
     cart: localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")!) : [],
     wishlist: localStorage.getItem("wishlist") ? JSON.parse(localStorage.getItem("wishlist")!) : [],
+    isCartVisible: false
   }
 } else {
   initialState = {
     cart: [],
-    wishlist: []
+    wishlist: [],
+    isCartVisible: false
   }
 }
 
@@ -24,23 +27,38 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload }) => {
+      if (state.cart.length === 0) state.cart.push({ product: payload, count: 1 });
+      
       for (const item of state.cart) {
-        if (item.id === payload.id) return;
+        const found = state.cart.find(({ product }) => product?.id === payload?.id);
+        if (found !== undefined) {
+          found.count++;
+        } else {
+          state.cart.push({product: item, count: 1})
+        }
       }
 
-      state.cart.push(payload);
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     addToWishlist: (state, {payload}) => {
-      for (const item of state.wishlist) {
-        if (item.id === payload.id) return;
-      }
+      if (state.wishlist.length === 0) state.wishlist.push({ product: payload, count: 1 });
       
-      state.wishlist.push(payload);
+      for (const item of state.wishlist) {
+        const found = state.wishlist.find(({ product }) => product?.id === payload?.id);
+        if (found !== undefined) {
+          found.count++;
+        } else {
+          state.wishlist.push({product: item, count: 1})
+        }
+      }
+
       localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
+    },
+    toggleVisibility: (state) => {
+      state.isCartVisible = !state.isCartVisible;
     }
   }
 });
 
 export const userReducer = userSlice.reducer; 
-export const { addToCart, addToWishlist } = userSlice.actions;
+export const { addToCart, addToWishlist, toggleVisibility } = userSlice.actions;

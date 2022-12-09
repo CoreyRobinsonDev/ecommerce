@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 function MyApp({ Component, pageProps }: AppProps) {
   const [showChild, setShowChild] = useState<boolean>()
 
-  // skipping hydration state to aviod hydration failed error
+  // skipping hydration step to aviod hydration failed error
   useEffect(() => {
     setShowChild(true)
   },[])
