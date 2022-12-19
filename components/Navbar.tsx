@@ -11,7 +11,7 @@ import FX from "../styles/FX.module.css";
 import CollectionsMenu from "./CollectionsMenu";
 import NewInMenu from "./NewInMenu";
 import ItemPopout from "./ItemPopout";
-  import { useAppSelector, useAppDispatch } from "../util/hooks";
+import { useAppSelector, useAppDispatch } from "../util/hooks";
 import { toggleVisibility } from "../lib/features/userSlice";
 
 const Navbar = () => {
