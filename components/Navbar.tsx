@@ -21,7 +21,6 @@ const Navbar = () => {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector(state => state.user.cart).reduce((acc, cur) => acc + cur.count, 0);
   const wishlistItems = useAppSelector(state => state.user.wishlist).reduce((acc, cur) => acc + cur.count, 0);
-  console.log(cartItems)
 
   return <nav className={styles.container}>
     <ItemPopout />

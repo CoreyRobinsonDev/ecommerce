@@ -27,28 +27,28 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload }) => {
-      if (state.cart.length === 0) state.cart.push({ product: payload, count: 1 });
-      
-      for (const item of state.cart) {
+      if (state.cart.length === 0) {
+        state.cart.push({ product: payload, count: 1 });
+      } else {
         const found = state.cart.find(({ product }) => product?.id === payload?.id);
         if (found !== undefined) {
           found.count++;
         } else {
-          state.cart.push({product: item, count: 1})
+          state.cart.push({product: payload, count: 1})
         }
       }
 
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     addToWishlist: (state, {payload}) => {
-      if (state.wishlist.length === 0) state.wishlist.push({ product: payload, count: 1 });
-      
-      for (const item of state.wishlist) {
+      if (state.wishlist.length === 0) {
+        state.wishlist.push({ product: payload, count: 1 });
+      } else {
         const found = state.wishlist.find(({ product }) => product?.id === payload?.id);
         if (found !== undefined) {
           found.count++;
         } else {
-          state.wishlist.push({product: item, count: 1})
+          state.wishlist.push({product: payload, count: 1})
         }
       }
 
@@ -56,7 +56,7 @@ const userSlice = createSlice({
     },
     toggleVisibility: (state) => {
       state.isCartVisible = !state.isCartVisible;
-    }
+    },
   }
 });
 
