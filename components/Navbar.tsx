@@ -23,7 +23,7 @@ const Navbar = () => {
   const wishlistItems = useAppSelector(state => state.user.wishlist).reduce((acc, cur) => acc + cur.count, 0);
 
   return <nav className={styles.container}>
-    <ItemPopout />
+      <ItemPopout />
     <div className={styles.nav__top_container}>
       <ul className={styles.top__style_list}>
         <li><Link href="/"><a className={`${styles["--women"]} ${styles.top__item}`} onClick={() => setFocus("women")}>WOMEN</a></Link></li>

@@ -31,6 +31,7 @@ const userSlice = createSlice({
 
       if (state.cart.length === 0) {
         state.cart.push({ product, hasSale, selectedColor, count: 1 });
+        state.isCartVisible = true;
       } else {
         const found = state.cart.find((element) => element.product?.id === product?.id);
         if (found !== undefined) {

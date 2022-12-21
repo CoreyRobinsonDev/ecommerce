@@ -53,7 +53,7 @@ const ItemCard = ({ category = Category.womens, index = 0, hasSale = false }: {c
         : <p className={styles.info__price}>${clothing.price}.00</p>
       }
       <div>
-        {clothing.colors.map((color:string, key:number) => <button key={key} className={styles.info__color} style={{backgroundColor: color}} onClick={() => setSelectedColor(color)}></button>)}
+        {clothing.colors.map((color:string, key:number) => <button key={key} className={styles.info__color} style={{backgroundColor: color}} onFocus={() => setSelectedColor(color)}></button>)}
       </div>
     </div>
   </article>
