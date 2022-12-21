@@ -40,11 +40,30 @@
   opacity: .7;
 }
 
-.item__price {
-  font-size: 2.2rem;
-  padding: 1rem 0;
+.strikethrough {
+  text-decoration: line-through;
+  opacity: 50%;
+  margin-left: 1rem;
 }
 
+.item__price, .item__sale_price {
+  font-size: 2.2rem;
+}
+
+.item__sale_price {
+  color: red;
+}
+
+.item__color {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;  
+  background-color: aquamarine;
+}
+
+.item__color:focus {
+  outline: 2px solid black;
+}
 
 .info_container {
   display: flex;

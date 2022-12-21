@@ -95,7 +95,6 @@
 .info__color {
   width: 3rem;
   height: 3rem;
-  background-color: aquamarine;
   border-radius: 50%;
   margin-right: .5rem;
 }
@@ -107,7 +106,7 @@
 .strikethrough {
   text-decoration: line-through;
   opacity: 50%;
-  margin-right: 2rem;
+  margin-left: 2rem;
 }
 
 

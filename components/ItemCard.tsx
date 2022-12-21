@@ -14,10 +14,11 @@ const ItemCard = ({ category = Category.womens, index = 0, hasSale = false }: {c
   const item: any = inventory[category];
   const clothing = item.clothes[index];
   const [img, setImg] = useState(clothing.img1);
+  const [selectedColor, setSelectedColor] = useState("");
   const dispatch = useAppDispatch();
 
-  const insertToCart = () => dispatch(addToCart(clothing));
-  const insertToWishlist = () => dispatch(addToWishlist(clothing));
+  const insertToCart = () => dispatch(addToCart({product: clothing, hasSale, selectedColor}));
+  const insertToWishlist = () => dispatch(addToWishlist({product: clothing, hasSale, selectedColor}));
 
   return <article className={styles.container}>
     <div>
@@ -46,13 +47,13 @@ const ItemCard = ({ category = Category.womens, index = 0, hasSale = false }: {c
       <p className={`${styles.info__description} ${FX.hover}`}>{clothing.name}</p>
       {hasSale
         ? <span>
+          <span className={styles.info__sale_price}>${clothing.salePrice}.00</span>
           <span className={styles.strikethrough}>${clothing.price}.00</span>
-          <span className={styles.info__sale_price}>${Math.floor(clothing.price - (clothing.price * .2))}.00</span>
         </span> 
         : <p className={styles.info__price}>${clothing.price}.00</p>
       }
       <div>
-        {clothing.colors.map((color:string, key:number) => <button key={key} className={styles.info__color} style={{backgroundColor: color}}></button>)}
+        {clothing.colors.map((color:string, key:number) => <button key={key} className={styles.info__color} style={{backgroundColor: color}} onClick={() => setSelectedColor(color)}></button>)}
       </div>
     </div>
   </article>

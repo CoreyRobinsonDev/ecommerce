@@ -27,32 +27,73 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload }) => {
+      const { product, hasSale, selectedColor } = payload;
+
       if (state.cart.length === 0) {
-        state.cart.push({ product: payload, count: 1 });
+        state.cart.push({ product, hasSale, selectedColor, count: 1 });
       } else {
-        const found = state.cart.find(({ product }) => product?.id === payload?.id);
+        const found = state.cart.find((element) => element.product?.id === product?.id);
         if (found !== undefined) {
           found.count++;
         } else {
-          state.cart.push({product: payload, count: 1})
+          state.cart.push({product, hasSale, selectedColor, count: 1})
         }
       }
 
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     addToWishlist: (state, {payload}) => {
+      const { product, hasSale, selectedColor } = payload;
+
       if (state.wishlist.length === 0) {
-        state.wishlist.push({ product: payload, count: 1 });
+        state.wishlist.push({ product, hasSale, selectedColor, count: 1 });
       } else {
-        const found = state.wishlist.find(({ product }) => product?.id === payload?.id);
+        const found = state.wishlist.find((element) => element.product?.id === product?.id);
         if (found !== undefined) {
           found.count++;
         } else {
-          state.wishlist.push({product: payload, count: 1})
+          state.wishlist.push({product, hasSale, selectedColor, count: 1})
         }
       }
 
       localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
+    },
+    incrementCount: (state, { payload }) => {
+      const { source, product } = payload;
+
+      if (source === "cart") {
+        const found = state.cart.find((element) => element.product?.id === product?.id);
+        found.count++;
+        localStorage.setItem("cart", JSON.stringify(state.cart));
+      } else {
+        const found = state.wishlist.find((element) => element.product?.id === product?.id);
+        found.count++;
+        localStorage.setItem("wishlist", JSON.stringify(state.cart));
+      }
+      
+    },
+    decrementCount: (state, { payload }) => {
+      const { source, product } = payload;
+     
+      if (source === "cart") {
+        const found = state.cart.find((element) => element.product?.id === product?.id);
+        found.count--;
+         
+        if (found.count === 0) {
+          const index = state.cart.indexOf(found);
+          state.cart.splice(index, 1);
+        }
+        localStorage.setItem("cart", JSON.stringify(state.cart));
+      } else {
+        const found = state.wishlist.find((element) => element.product?.id === product?.id);
+        found.count--;
+
+        if (found.count === 0) {
+          const index = state.wishlist.indexOf(found);
+          state.wishlist.splice(index, 1);
+        }
+        localStorage.setItem("wishlist", JSON.stringify(state.cart));
+      }
     },
     toggleVisibility: (state) => {
       state.isCartVisible = !state.isCartVisible;
@@ -61,4 +102,4 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer; 
-export const { addToCart, addToWishlist, toggleVisibility } = userSlice.actions;
+export const { addToCart, addToWishlist, toggleVisibility, incrementCount, decrementCount } = userSlice.actions;

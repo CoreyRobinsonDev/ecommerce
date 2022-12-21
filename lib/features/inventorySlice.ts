@@ -1,7 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { Product } from "../../util/types";
 
+type InitialState = {
+  womens: {
+    clothes: Product[]
+  },
+  mens: {},
+  kids: {}
+}
 
-const initialState = {
+const initialState: InitialState = {
   womens: {
     clothes: [
       {
@@ -11,7 +19,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit6.webp",
         img2: "/pictures/womens/clothes/fit1.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 209,
+        salePrice: 167,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
@@ -22,7 +31,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit2.webp",
         img2: "/pictures/womens/clothes/fit7.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 229,
+        salePrice: 183,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
@@ -33,7 +43,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit8.webp",
         img2: "/pictures/womens/clothes/fit5.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 99,
+        salePrice: 79,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
@@ -44,7 +55,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit9.webp",
         img2: "/pictures/womens/clothes/fit4.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 189,
+        salePrice: 151,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
@@ -55,7 +67,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit10.webp",
         img2: "/pictures/womens/clothes/fit3.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 189,
+        salePrice: 151,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
@@ -66,7 +79,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit11.webp",
         img2: "/pictures/womens/clothes/fit1.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 89,
+        salePrice: 71,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
@@ -77,7 +91,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit12.webp",
         img2: "/pictures/womens/clothes/fit13.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 179,
+        salePrice: 143,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
@@ -88,7 +103,8 @@ const initialState = {
         description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.",
         img1: "/pictures/womens/clothes/fit14.webp",
         img2: "/pictures/womens/clothes/fit15.webp",
-        price: (Math.floor(Math.random() * 20) * 10) + 9,
+        price: 129,
+        salePrice: 103,
         numInStock: Math.floor(Math.random() * 50),
         colors: ["#C25E8E", "#9E66B5", "#4C76CF", "#0082CE", "#0087AF", "#008578"]
       },
