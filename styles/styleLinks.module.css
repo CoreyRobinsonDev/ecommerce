@@ -28,6 +28,9 @@
   transform: scale(var(--scale));
   filter: grayscale(var(--gray));
   transition: var(--transition);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .link_btn {

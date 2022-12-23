@@ -1,4 +1,4 @@
-import { BsHeart, BsBag, BsTruck, BsTag, BsClipboard, BsChevronDown } from "react-icons/bs";
+import { BsHeart, BsBag, BsTruck, BsTag, BsClipboard } from "react-icons/bs";
 import { GoGift } from "react-icons/go";
 import Image from "next/image";
 import { motion } from "framer-motion";

@@ -11,6 +11,9 @@
   display: flex;
   justify-content: center;
   height: 90rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .link__caption_container {
@@ -25,7 +28,7 @@
 }
 
 .link__caption_container h2 {
-  color: cyan;
+  color: white;
   font-size: 6rem;
   font-weight: normal;
   padding: 5rem 0;

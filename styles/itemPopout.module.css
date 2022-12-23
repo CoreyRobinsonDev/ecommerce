@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   width: 45rem;
-  height: 100vh;
+  height: calc(100vh - 27rem);
   background-color: white;
   z-index: 10;
   padding: 2rem;
@@ -126,6 +126,7 @@
   bottom: 0;
   right: 0;
   width: 45rem;
+  height: 27rem;
   background-color: white;
   z-index: 10;
   padding: 2rem;
@@ -194,4 +195,11 @@
 .footer__checkout_btn.disabled {
   opacity: .5;
   cursor: not-allowed;
+}
+
+
+@media only screen and (max-width: 920px) {    
+  .container, .footer {
+    width: 100vw;
+  }
 }
