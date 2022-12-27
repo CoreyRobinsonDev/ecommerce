@@ -28,7 +28,7 @@ const Navbar = () => {
       <ul className={styles.top__style_list}>
         <li><Link href="/"><a className={`${styles["--women"]} ${styles.top__item}`} onClick={() => setFocus("women")}>WOMEN</a></Link></li>
         <li><Link href="/mens"><a className={`${styles["--men"]} ${styles.top__item}`} onClick={() => setFocus("men")}>MEN</a></Link></li>
-        <li><Link href="#"><a className={`${styles["--kids"]} ${styles.top__item}`} onClick={() => setFocus("kids")}>KIDS</a></Link></li>
+        <li><Link href="/kids"><a className={`${styles["--kids"]} ${styles.top__item}`} onClick={() => setFocus("kids")}>KIDS</a></Link></li>
       </ul> 
       <span className={styles.top__carts}>
         <div className={styles.sale}><span>EXTRA 10% OFF</span> ON FIRST ORDER</div>

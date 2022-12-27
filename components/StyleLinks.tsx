@@ -9,7 +9,7 @@ const StyleLinks = ({category = Category.womens}) => {
       <span className={styles.img} style={
         category === Category.womens ? { backgroundImage: `url(/pictures/${category}/clothes/tops.webp)` } : 
         category === Category.mens ? { backgroundImage: `url(/pictures/${category}/clothes/tops.webp)` } : 
-        category === Category.kids ? { backgroundImage: "url(" + `/pictures/${category}/links/collegewear.jpg` + ")" } : {}
+        category === Category.kids ? { backgroundImage: "url(" + `/pictures/${category}/clothes/jackets.webp` + ")" } : {}
       }></span>
       </div>    
       <div className={styles.link}>
@@ -17,7 +17,7 @@ const StyleLinks = ({category = Category.womens}) => {
       <span className={styles.img} style={
         category === Category.womens ? { backgroundImage: `url(/pictures/${category}/clothes/fit1.webp)` } : 
         category === Category.mens ? { backgroundImage: `url(/pictures/${category}/clothes/pants.webp)` } : 
-        category === Category.kids ? { backgroundImage: "url(" + `/pictures/${category}/links/collegewear.jpg` + ")" } : {}
+        category === Category.kids ? { backgroundImage: "url(" + `/pictures/${category}/clothes/jeans.webp` + ")" } : {}
       }></span>
       </div>    
       <div className={styles.link}>
@@ -33,27 +33,27 @@ const StyleLinks = ({category = Category.womens}) => {
       <span className={styles.img} style={
         category === Category.womens ? { backgroundImage: `url(/pictures/${category}/clothes/fit9.webp)` } : 
         category === Category.mens ? { backgroundImage: `url(/pictures/${category}/clothes/fit11.webp)` } : 
-        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/fit9.webp)` } : {}
+        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/dresses.webp)` } : {}
       }></span>
       </div>    
       <div className={styles.link}>
       {category === Category.womens && <Link href="#"><a className={styles.link_btn}>FORMAL</a></Link>}
       {category === Category.mens && <Link href="#"><a className={styles.link_btn}>HOODIES</a></Link>}
-      {category === Category.kids && <Link href="#"><a className={styles.link_btn}>DRESSES</a></Link>}
+      {category === Category.kids && <Link href="#"><a className={styles.link_btn}>HOODIES</a></Link>}
       <span className={styles.img} style={
         category === Category.womens ? { backgroundImage: `url(/pictures/${category}/clothes/formal.webp)` } : 
         category === Category.mens ? { backgroundImage: `url(/pictures/${category}/clothes/hoodies.webp)` } : 
-        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/fit9.webp)` } : {}
+        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/hoodies.webp)` } : {}
       }></span>
       </div>    
       <div className={styles.link}>
       {category === Category.womens && <Link href="#"><a className={styles.link_btn}>SWIMWEAR</a></Link>}
       {category === Category.mens && <Link href="#"><a className={styles.link_btn}>SLIPPERS</a></Link>}
-      {category === Category.kids && <Link href="#"><a className={styles.link_btn}>DRESSES</a></Link>}
+      {category === Category.kids && <Link href="#"><a className={styles.link_btn}>BAGS</a></Link>}
       <span className={styles.img} style={
         category === Category.womens ? { backgroundImage: `url(/pictures/${category}/clothes/fit12.webp)` } : 
         category === Category.mens ? { backgroundImage: `url(/pictures/${category}/clothes/fit8.webp)` } : 
-        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/fit9.webp)` } : {}
+        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/bags.webp)` } : {}
       }></span>
       </div>    
       <div className={styles.link}> 
@@ -61,7 +61,7 @@ const StyleLinks = ({category = Category.womens}) => {
       <span className={styles.img} style={
         category === Category.womens ? { backgroundImage: `url(/pictures/${category}/clothes/fit15.webp)` } : 
         category === Category.mens ? { backgroundImage: `url(/pictures/${category}/clothes/fit9.webp)` } : 
-        category === Category.kids ? { backgroundImage: "url(" + `/pictures/${category}/links/collegewear.jpg` + ")" } : {}
+        category === Category.kids ? { backgroundImage: "url(" + `/pictures/${category}/clothes/shoes.webp` + ")" } : {}
       }></span>
       </div>    
       <div className={styles.link}>
@@ -69,7 +69,7 @@ const StyleLinks = ({category = Category.womens}) => {
       <span className={styles.img} style={
         category === Category.womens ? { backgroundImage: `url(/pictures/${category}/clothes/bag.webp)` } : 
         category === Category.mens ? { backgroundImage: `url(/pictures/${category}/clothes/accessories.webp)` } : 
-        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/fit9.webp)` } : {}
+        category === Category.kids ? { backgroundImage: `url(/pictures/${category}/clothes/accessories.webp)` } : {}
       }></span>
       </div>    
   </section>
