@@ -7,7 +7,6 @@ import Sale from '../components/Sale'
 import StyleLinks from '../components/StyleLinks'
 
 import { Category } from "../util/types";
-import styles from '../styles/home.module.css'
 
 const Mens = () => {
   return <>
@@ -25,7 +24,14 @@ const Mens = () => {
         />
       </Link>
       
-      <p className={styles.sale}>FIRST PURCHASE OFFER: TAKE 30% OFF SHOPWIDE. CODE APPLIED AT CHECKOUT*</p>
+      <p
+        style={{
+          backgroundImage: "linear-gradient(to right, #ffffff, #fcfaff, #fbf6ff, #fbf0ff, #fcebff, #fcebff, #fcebff, #fcebff, #fbf0ff, #fbf6ff, #fcfaff, #ffffff)",
+          textAlign: "center",
+          color:"#AF215F" ,
+          padding:"1.5rem" 
+        }}
+        >FIRST PURCHASE OFFER: TAKE 30% OFF SHOPWIDE. CODE APPLIED AT CHECKOUT*</p>
       <Link href="#">
         <Image
           src={"/pictures/mens/banner/men_banner1.webp"}
