@@ -52,7 +52,7 @@ const Navbar = () => {
         ><Link href="#"><a className={`${styles.bottom__item} ${FX.hover}`}>COLLECTIONS</a></Link></motion.li>
         <li><Link href="/about-us"><a className={`${styles.bottom__item} ${FX.hover}`}>ABOUT US</a></Link></li>
         <li><Link href="/contact"><a className={`${styles.bottom__item} ${FX.hover}`}>CONTACT</a></Link></li>
-        <li><Link href="#"><a className={`${styles.bottom__item} ${FX.hover}`}>FAQ</a></Link></li>
+        <li><Link href="/faq"><a className={`${styles.bottom__item} ${FX.hover}`}>FAQ</a></Link></li>
       </ul>
       <SearchBar />
       <span className={styles.hamburger}>

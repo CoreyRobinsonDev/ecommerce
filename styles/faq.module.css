@@ -1,0 +1,86 @@
+.container {
+  width: 60vw;
+  margin: 8rem auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.breadcrumb a{
+  color: black;
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.underline {
+  color: black;
+  text-decoration: underline;
+}
+
+
+/* Content */
+
+.content_container {
+  display: grid;
+  grid-template-columns: 35ch 1fr;
+  gap: 4rem;
+  padding-top: 4rem;
+}
+
+.content__title {
+  font-size: 2rem;
+  border-bottom: 3px solid pink;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.content__contact_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+}
+
+.content__contact_container > a {
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+  color: black;
+  padding: 2rem;
+}
+
+
+/* Card */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fafafa;
+  width: 100%;
+  height: 6rem;
+  overflow: hidden;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+.card__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+  padding-bottom: .5rem;
+}
+
+.card__answer {
+  opacity: 0;
+}
