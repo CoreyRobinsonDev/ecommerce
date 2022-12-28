@@ -59,11 +59,9 @@ const FAQ = () => {
 function Card({question, answer}: {question: string, answer: string}) {
   const [isOpen, setIsOpen] = useState(false);
 
-  return <motion.button
+  return <button
     className={styles.card}
     onClick={() => setIsOpen(!isOpen)}
-    transition={{type: "tween"}}
-    animate={isOpen ? {height: "10rem"} : {height: "6rem"}}
   >
     <motion.span
       className={styles.card__question}
@@ -73,8 +71,8 @@ function Card({question, answer}: {question: string, answer: string}) {
     <motion.p
       className={styles.card__answer}
       transition={{type: "tween"}}
-      animate={isOpen ? {opacity: 100} : {opacity: 0}}
+      animate={isOpen ? {display: "block", opacity: 100} : {display: "none", opacity: 0}}
     >{answer}</motion.p>
-  </motion.button>
+  </button>
 }
 export default FAQ;
