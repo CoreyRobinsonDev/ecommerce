@@ -19,8 +19,12 @@
   margin: 2rem 0;
 }
 
+.text {
+  color: gray;
+}
+
 .underline {
-  color: black;
+  color: gray;
   text-decoration: underline;
 }
 
@@ -75,12 +79,13 @@
   align-items: center;
   width: 100%;
   font-size: 2rem;
-  padding-bottom: .5rem;
 }
 
 .card__answer {
   display: none;
   opacity: 0;
+  color: gray;
+  padding-top: 2rem;
 }
 
 @media only screen and (max-width: 900px) {

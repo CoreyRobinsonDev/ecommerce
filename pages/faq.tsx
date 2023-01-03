@@ -31,11 +31,11 @@ const FAQ = () => {
         </span>
         <h1 className={styles.title}>FAQS</h1>
       </header>
-      <p>Below FAQ are some common concerns of our clients before purchasing an item. If you have other questions, please just send it to <a href="#" className={styles.underline}>example@domain.com</a>.</p>
+      <p className={styles.text}>Below FAQ are some common concerns of our clients before purchasing an item. If you have other questions, please just send it to <a href="#" className={styles.underline}>example@domain.com</a>.</p>
       <section className={styles.content_container}>
         <div>
           <h2 className={styles.content__title}>Need Help?</h2>
-          <p>If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative. If we are not available, drop us an email and we will get back to you within 20-36 hours!</p>
+          <p className={styles.text}>If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative. If we are not available, drop us an email and we will get back to you within 20-36 hours!</p>
           <div className={styles.content__contact_container}>
             <a href="#">
               <AiOutlineMessage/>
@@ -66,7 +66,7 @@ function Card({question, answer}: {question: string, answer: string}) {
     <motion.span
       className={styles.card__question}
       transition={{type: "tween"}}
-      animate={isOpen ? {borderBottom: "1px solid"} : {borderBottom: "1px transparent"}}
+      animate={isOpen ? {borderBottom: "1px solid", paddingBottom: ".5rem"} : {borderBottom: "1px transparent", paddingBottom: 0}}
     ><p>{`Q: "${question}"`}</p> <p>{isOpen ? <BiMinus /> : <BsPlus />}</p></motion.span>
     <motion.p
       className={styles.card__answer}

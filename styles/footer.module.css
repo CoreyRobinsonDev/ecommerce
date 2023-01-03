@@ -145,4 +145,8 @@
   .links_container {
     border: none;
   }
+
+  .newsletter {
+    flex: 0 1 90vw; 
+  }
 }
