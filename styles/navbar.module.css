@@ -1,6 +1,6 @@
 .container {
   position: sticky;
-  top: 0;
+  top: 0dvh;
   z-index: 6;
   box-shadow: 0 0 5px 0 #eee;
 }
@@ -35,6 +35,10 @@
 .top__item.--kids {
   color: white;
   background-color: orange;
+}
+
+.top__item.mobile {
+  display: none;
 }
 
 .top__carts {
@@ -108,6 +112,14 @@
   display: none;
 }
 
+.mobile_menu {
+  display: none;
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  height: 100vh;
+}
+
 @media only screen and (max-width: 920px) {    
   .hamburger {
     display: block;
@@ -116,12 +128,22 @@
   .bottom__nav_list, .sale {
     display: none;
   }
-  
-  
+
+  .mobile_menu {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 500px) {
   .brand {
     display: none;
+  }
+
+  .top__item {
+    display: none;
+  }
+
+  .top__item.mobile {
+    display: inline;
   }
 }

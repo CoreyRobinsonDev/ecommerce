@@ -13,22 +13,27 @@ import NewInMenu from "./NewInMenu";
 import ItemPopout from "./ItemPopout";
 import { useAppSelector, useAppDispatch } from "../util/hooks";
 import { toggleVisibility } from "../lib/features/userSlice";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const [focus, setFocus] = useState("");
   const [collectionsActive, setCollectionsActive] = useState(false);
   const [newInActive, setNewInActive] = useState(false);
+  const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector(state => state.user.cart).reduce((acc, cur) => acc + cur.count, 0);
   const wishlistItems = useAppSelector(state => state.user.wishlist).reduce((acc, cur) => acc + cur.count, 0);
 
   return <nav className={styles.container}>
-      <ItemPopout />
     <div className={styles.nav__top_container}>
+      <ItemPopout />
       <ul className={styles.top__style_list}>
         <li><Link href="/"><a className={`${styles["--women"]} ${styles.top__item}`} onClick={() => setFocus("women")}>WOMEN</a></Link></li>
         <li><Link href="/mens"><a className={`${styles["--men"]} ${styles.top__item}`} onClick={() => setFocus("men")}>MEN</a></Link></li>
         <li><Link href="/kids"><a className={`${styles["--kids"]} ${styles.top__item}`} onClick={() => setFocus("kids")}>KIDS</a></Link></li>
+        <li><Link href="/"><a className={`${styles["--women"]} ${styles.top__item} ${styles.mobile}`} onClick={() => setFocus("women")}>W</a></Link></li>
+        <li><Link href="/mens"><a className={`${styles["--men"]} ${styles.top__item} ${styles.mobile}`} onClick={() => setFocus("men")}>M</a></Link></li>
+        <li><Link href="/kids"><a className={`${styles["--kids"]} ${styles.top__item} ${styles.mobile}`} onClick={() => setFocus("kids")}>K</a></Link></li>
       </ul> 
       <span className={styles.top__carts}>
         <div className={styles.sale}><span>EXTRA 10% OFF</span> ON FIRST ORDER</div>
@@ -55,11 +60,12 @@ const Navbar = () => {
         <li><Link href="/faq"><a className={`${styles.bottom__item} ${FX.hover}`}>FAQ</a></Link></li>
       </ul>
       <SearchBar />
-      <span className={styles.hamburger}>
+      <button className={styles.hamburger} onClick={() => setMobileMenuActive(!mobileMenuActive)}>
         <GiHamburgerMenu size={30} />
-      </span>
+      </button>
       <CollectionsMenu isActive={collectionsActive} />
       <NewInMenu isActive={newInActive} />
+      <div className={styles.mobile_menu} onClick={() => setMobileMenuActive(!mobileMenuActive)}><MobileMenu isActive={mobileMenuActive} /></div>
     </div>
   </nav>
 }
