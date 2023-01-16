@@ -21,13 +21,13 @@ const Footer = () => {
       </form>
       <p>FOLLOW US</p>
       <ul className={styles.socials_list}>
-        <li><Link href="https://www.facebook.com/" target="_blank" rel="noreferrer"><a className={`${styles.socials_list__item} ${styles["--facebook"]}`}><FaFacebookF/></a></Link></li>
-        <li><Link href="https://twitter.com/" target="_blank" rel="noreferrer"><a className={`${styles.socials_list__item} ${styles["--twitter"]}`}><BsTwitter/></a></Link></li>
-        <li><Link href="https://www.instagram.com/" target="_blank" rel="noreferrer"><a className={`${styles.socials_list__item} ${styles["--instagram"]}`}><BsInstagram/></a></Link></li>
-        <li><Link href="https://www.pinterest.com/" target="_blank" rel="noreferrer"><a className={`${styles.socials_list__item} ${styles["--pinterest"]}`}><FaPinterestP/></a></Link></li>
-        <li><Link href="https://www.youtube.com/" target="_blank" rel="noreferrer"><a className={`${styles.socials_list__item} ${styles["--youtube"]}`}><BsYoutube /></a></Link></li>
+        <li><a className={`${styles.socials_list__item} ${styles["--facebook"]}`} href="https://www.facebook.com/" target="_blank" rel="noreferrer"><FaFacebookF/></a></li>
+        <li><a className={`${styles.socials_list__item} ${styles["--twitter"]}`} href="https://twitter.com/" target="_blank" rel="noreferrer"><BsTwitter/></a></li>
+        <li><a className={`${styles.socials_list__item} ${styles["--instagram"]}`} href="https://www.instagram.com/" target="_blank" rel="noreferrer"><BsInstagram/></a></li>
+        <li><a className={`${styles.socials_list__item} ${styles["--pinterest"]}`} href="https://www.pinterest.com/" target="_blank" rel="noreferrer"><FaPinterestP/></a></li>
+        <li><a className={`${styles.socials_list__item} ${styles["--youtube"]}`} href="https://www.youtube.com/" target="_blank" rel="noreferrer"><BsYoutube /></a></li>
       </ul>
-      <small className={styles.copyright}>&#169; 2022 Artisan, Inc. All rights reserved. This is a non-functional front-end theme showcase. <Link href="https://github.com/CoreyRobinsonDev/ecommerce" target="_blank" rel="nonreferrer">{"<View Code>"}</Link></small>
+      <small className={styles.copyright}>&#169; 2022 Artisan, Inc. All rights reserved. This is a non-functional front-end theme showcase. <a href="https://github.com/CoreyRobinsonDev/ecommerce" target="_blank" rel="noreferrer">{"<View Code>"}</a></small>
     </div>
     <div className={styles.links_container}>
       <div className={styles.links_child}>
